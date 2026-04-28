@@ -1,14 +1,14 @@
 #include <stdio.h>
 
 int main() {
-    int dia = 3;
+    int dia;
 
     printf("Entre o valor do dia! \n");
     scanf("%d", &dia);
 
     switch (dia) {
         case 1:
-          printf("Domigo\n");
+          printf("Domingo\n");
     break;
         case 2:
           printf("Segunda-feira\n");
