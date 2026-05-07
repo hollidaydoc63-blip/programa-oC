@@ -1,31 +1,39 @@
 #include <stdio.h>
+// Utiizando recursividade para mover as peças de xadrez Torre, Bispo e Rainha
+void moverTorre(int casas) {
+    if (casas > 0){
+        printf("Direita\n");
+        moverTorre(casas - 1);
+    }
+}
+
+void moverBispo(int casas) {
+    if (casas > 0){
+        printf("Cima, Direita\n");
+        moverBispo(casas - 1);
+    }
+}
+
+void moverRainha(int casas) {
+    if (casas > 0) {
+        printf("Esquerda\n");
+        moverRainha(casas - 1);
+    }
+}
+
+
+
 
 int main() {
-    printf("### Bem-vindos ao Jogo de Tabuleiro: Xadrez ###\n");
-    // A seguir terá demonstrações práticas de movimentações de peças do xadrez utilizando for, while, e do-while
-    
-    // Mover a Torre cinco casas para a direita
-    printf("*** Torre se movimentará para a direita cinco casas ***\n");
 
-    for (int i = 0; i < 5; i++) {
-        printf("Direita\n"); // Imprime a direção na qual a sua peça, que no caso do for foi escolhido Torre, irá se movimentar
-    }
- 
+    printf("*** Torre se movimentará para a direita cinco casas ***\n");
+    moverTorre (5);
+
     printf("*** Bispo se movimentará cinco casas na diagonal para cima à direita ***\n");
-    int i = 0;
-    // Mover o Bispo cinco casas na diagonal para cima à direita, utilizando o while para executar o movimento
-    while (i < 5) 
-    {
-        printf("Cima, Direita\n");
-        i++;
-    }
-    i = 0;
+    moverBispo (5);
+
     printf("*** Rainha se movimetará oito casas para a esquerda ***\n");
-    // Mover a Rainha oito casas para a esquerda utilizando o do-wihile
-    do {
-        printf("Esquerda\n");
-        i++;
-    } while (i < 8);
+    moverRainha (8);
 
     printf("*** Cavalo se movimetará duas casas para baixo, e uma casa para a esquerda ***\n");
     // Mover o Cavalo duas casas para baixo e uma casa para a esquerda com loops aninhados, utilizando o for
@@ -38,8 +46,8 @@ int main() {
         }
 
            printf("Esquerda\n");
-    }
 
     return 0;
 
+    }
 }
